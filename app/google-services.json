@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "644588077429",
+    "firebase_url": "https://mylogindatabase-d5894.firebaseio.com",
+    "project_id": "mylogindatabase-d5894",
+    "storage_bucket": "mylogindatabase-d5894.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:644588077429:android:7f40e9ffb530cace",
+        "android_client_info": {
+          "package_name": "com.example.claudio.splashscreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "644588077429-ic5h68g8hm9k0e34crda0klod0d1jfis.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.claudio.splashscreen",
+            "certificate_hash": "ffb3e85b3b53e2b70904c03f13ffc14c45016765"
+          }
+        },
+        {
+          "client_id": "644588077429-et96onatgm2806nv344fj61293uan0s0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKkxiWrs0NZHuVH7jfk-IImN7N3frHMrU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "644588077429-et96onatgm2806nv344fj61293uan0s0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
