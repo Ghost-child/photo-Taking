@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -27,9 +28,9 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class PostingActivity extends AppCompatActivity {
+public class PostingActivity extends AppCompatActivity implements View.OnClickListener {
 private static final int PICK_IMAGE_REQUEST = 1;
-private Button mButtonChooseImage,mButtonUpload;
+private Button mButtonChooseImage,mButtonUpload,mLogout;
 private TextView mTextViewShowUploads;
 private EditText mEditTextFileName;
 private ImageView mImageView;
@@ -38,6 +39,7 @@ private Uri mImageUri;
 private StorageReference mStorageRef;
 private DatabaseReference mDatabaseRef;
 private StorageTask mUploadTask;
+private FirebaseAuth firebaseAuth;
 
     @Override
     protected  void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ private StorageTask mUploadTask;
         setContentView(R.layout.activity_posting);
         mButtonChooseImage = findViewById(R.id.button_choose_image);
         mButtonUpload = findViewById(R.id.button_upload);
+        mLogout = findViewById(R.id.logout);
         mTextViewShowUploads = findViewById(R.id.text_view_show_uploads);
         mEditTextFileName = findViewById(R.id.edit_text_file_name);
         mImageView = findViewById(R.id.imageView);
@@ -54,7 +57,11 @@ private StorageTask mUploadTask;
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
 
-        //Chhosing an Image from Gallery
+        //initialise firebase object which is different from the progressdialog one
+        firebaseAuth = FirebaseAuth.getInstance();
+
+
+        //Choosing an Image from Gallery
         mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +79,8 @@ private StorageTask mUploadTask;
                 }
             }
         });
+
+        mLogout.setOnClickListener(this);
         //Showing uploaded images
         mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -160,4 +169,17 @@ private StorageTask mUploadTask;
         startActivity(intent);
     }
 
+    @Override
+    public void onClick(View v) {
+        //if logout is clicked
+        if (v == mLogout){
+            //logging out the user
+            firebaseAuth.signOut();
+            //closing activity
+            finish();
+            //starting sign in activity
+            Intent logout = new Intent(getApplicationContext(),SignIn.class);
+            startActivity(logout);
+        }
+    }
 }

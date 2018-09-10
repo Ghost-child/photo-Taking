@@ -43,7 +43,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         mFirebaseAuth = FirebaseAuth.getInstance();
 
 
-        //to track if user is already logged in navigate them to profile activity. Last step of verification
+        //to track if user is already logged in navigate them to posting activity. Last step of verification
         if (mFirebaseAuth.getCurrentUser() !=null){
             finish();
             Intent auth = new Intent(getApplicationContext(), PostingActivity.class);

@@ -33,6 +33,17 @@
         android:scrollHorizontally="false"
         android:scrollbars="vertical"
         android:textColorHint="#529f00" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:text="Logout"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="16sp"/>
     <Button
         android:textStyle="bold"
         android:background="@color/colorPrimaryDark"

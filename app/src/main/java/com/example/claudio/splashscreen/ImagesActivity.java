@@ -89,7 +89,7 @@ public class ImagesActivity extends AppCompatActivity implements ImageAdapter.On
 
     @Override
     public void onWhatEverClick(int position) {
-//        Toast.makeText(this, "Whatever Click at position: "+position, Toast.LENGTH_SHORT).show();
+//will return if the need arises        Toast.makeText(this, "Whatever Click at position: "+position, Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "Sijamaliza Bado", Toast.LENGTH_LONG).show();
 
     }
